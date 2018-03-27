@@ -116,7 +116,7 @@ function STATS=kwtest(x)
 p = inputParser;
 addRequired(p,'x',@(x) validateattributes(x,{'numeric'},{'real','finite','nonnan','nonempty','ncols',2}));
 parse(p,x);
-assert(all(x(:,2) == round(x(:,2))),'Warning: all elements of column 2 of input matrix must be whole numbers')
+assert(all(x(:,2) == fix(x(:,2))),'Warning: all elements of column 2 of input matrix must be whole numbers')
 clear p
 
 
